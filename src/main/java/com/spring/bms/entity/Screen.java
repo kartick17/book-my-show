@@ -6,32 +6,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
-
 @Entity
-@Table(name = "movies")
+@Table(name = "screens")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Movie {
+public class Screen {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(nullable = false)
-    private String title;
+    private String name;
 
-    private String description;
+    private Integer totalSeats;
 
-    private String language;
-
-    private Integer durationMinutes;
-
-    private LocalDate releaseDate;
-
-    private Double rating;
-
-    private String posterUrl;
+    @ManyToOne
+    @JoinColumn(name = "theater_id", nullable = false)
+    private Theater theater;
 }

@@ -1,41 +1,36 @@
 package com.spring.bms.entity;
 
+
+import com.spring.bms.enums.SeatType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-
 @Entity
-@Table(name = "shows")
+@Table(name = "seats")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Show {
+public class Seat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(nullable = false)
-    private String name;
+    private Integer seatNumber;
 
-    @Column(nullable = false)
-    private LocalDate showDate;
+    @Column(name = "seat_row")
+    private String row;
 
-    private LocalTime startTime;
+    @Column(name = "seat_col")
+    private Integer col;
 
-    private LocalTime endTime;
-
-    private Double price;
-
-    @ManyToOne
-    @JoinColumn(name = "movie_id", nullable = false)
-    private Movie movie;
+    @Enumerated(EnumType.STRING)
+    private SeatType seatType;
 
     @ManyToOne
     @JoinColumn(name = "screen_id", nullable = false)
