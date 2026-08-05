@@ -9,8 +9,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class LoginRequest {
+public class TheaterRequest {
 
-    private String email;
-    private String password;
+    private String name;
+    private String address;
+    private Integer cityId;
 }
