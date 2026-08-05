@@ -1,0 +1,17 @@
+package com.spring.bms.repository;
+
+import com.spring.bms.entity.Booking;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import java.util.List;
+
+public interface BookingRepository extends JpaRepository<Booking, Long> {
+    List<Booking> findByUserId(Integer id);
+    List<Booking> findByShowId(Integer id);
+
+    // find all seats that are already booked for given show
+    @Query("SELECT s.id FROM Booking b JOIN b.seats s WHERE b.show.id=:showId AND b.status='CONFIRMED'")
+    List<Booking> findBookedSeatIdsByShowId(@Param("showId") Integer id);
+}
