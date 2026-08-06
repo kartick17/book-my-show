@@ -8,10 +8,10 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface BookingRepository extends JpaRepository<Booking, Long> {
-    List<Booking> findByUserId(Integer id);
-    List<Booking> findByShowId(Integer id);
+    List<Booking> findByUserId(Long id);
+    List<Booking> findByShowId(Long id);
 
     // find all seats that are already booked for given show
     @Query("SELECT s.id FROM Booking b JOIN b.seats s WHERE b.show.id=:showId AND b.status='CONFIRMED'")
-    List<Booking> findBookedSeatIdsByShowId(@Param("showId") Integer id);
+    List<Long> findBookedSeatIdsByShowId(@Param("showId") Long id);
 }

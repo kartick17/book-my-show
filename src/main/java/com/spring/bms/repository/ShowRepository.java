@@ -7,8 +7,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface ShowRepository extends JpaRepository<Show, Long> {
-    List<Show> findByMovieId(Integer movieId);
-    List<Show> findByScreenId(Integer screenId);
-    List<Show> findByMovieIdAndShowDate(Integer movieId, LocalDate showDate);
-    List<Show> findByScreenIdAndShowDate(Integer screenId, LocalDate showDate);
+    List<Show> findByMovieId(Long movieId);
+    List<Show> findByScreenId(Long screenId);
+    List<Show> findByMovieIdAndShowDate(Long movieId, LocalDate showDate);
+    List<Show> findByScreenIdAndShowDate(Long screenId, LocalDate showDate);
 }

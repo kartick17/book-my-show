@@ -14,8 +14,8 @@ import java.time.LocalTime;
 @AllArgsConstructor
 public class ShowRequest {
 
-    private Integer movieId;
-    private Integer screenId;
+    private Long movieId;
+    private Long screenId;
     private LocalDate showDate;
     private LocalTime startTime;
     private LocalTime endTime;

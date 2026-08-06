@@ -12,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BookingRequest {
-    private Integer userId;
-    private Integer showId;
-    private List<Integer> seatIds;
+    private Long userId;
+    private Long showId;
+    private List<Long> seatIds;
 }

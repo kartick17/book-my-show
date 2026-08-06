@@ -12,6 +12,6 @@ import lombok.Setter;
 public class ScreenRequest {
 
     private String name;
-    private Integer totalSeats;
-    private Integer theaterId;
+    private Long totalSeats;
+    private Long theaterId;
 }

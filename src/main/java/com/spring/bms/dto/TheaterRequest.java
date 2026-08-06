@@ -13,5 +13,5 @@ public class TheaterRequest {
 
     private String name;
     private String address;
-    private Integer cityId;
+    private Long cityId;
 }

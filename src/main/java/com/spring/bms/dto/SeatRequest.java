@@ -16,5 +16,5 @@ public class SeatRequest {
     private String row;
     private String col;
     private SeatType seatType;
-    private Integer screenId;
+    private Long screenId;
 }

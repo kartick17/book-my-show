@@ -1,10 +1,7 @@
 package com.spring.bms.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -13,13 +10,14 @@ import java.time.LocalTime;
 @Table(name = "shows")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Show {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(nullable = false)
     private String name;
@@ -31,7 +29,7 @@ public class Show {
 
     private LocalTime endTime;
 
-    private Double price;
+    private Double ticketPrice;
 
     @ManyToOne
     @JoinColumn(name = "movie_id", nullable = false)

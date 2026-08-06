@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface ScreenRepository extends JpaRepository<Screen, Long> {
 
-    List<Screen> findByTheaterId(Integer theaterId);
+    List<Screen> findByTheaterId(Long theaterId);
 }
