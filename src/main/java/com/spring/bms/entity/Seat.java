@@ -19,7 +19,7 @@ public class Seat {
     private Long id;
 
     @Column(nullable = false)
-    private Integer seatNumber;
+    private String seatNumber;
 
     @Column(name = "seat_row")
     private String row;

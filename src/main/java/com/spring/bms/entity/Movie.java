@@ -32,4 +32,6 @@ public class Movie {
     private Double rating;
 
     private String posterUrl;
+
+    private String genre;
 }

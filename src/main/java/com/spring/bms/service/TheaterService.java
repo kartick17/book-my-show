@@ -20,7 +20,7 @@ public class TheaterService {
     private final CityService cityService;
 
 
-    private Theater addTheater(TheaterRequest request)
+    public Theater addTheater(TheaterRequest request)
     {
         City city=cityService.getCityById(request.getCityId());
         Theater theater=Theater.builder()

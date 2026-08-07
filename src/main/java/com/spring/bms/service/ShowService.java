@@ -59,6 +59,9 @@ public class ShowService {
         return showRepository.findByMovieIdAndShowDate(movieId,date);
     }
 
-    //getShowByScreen
+    public List<Show> getShowByScreen(Long screenId)
+    {
+        return showRepository.findByScreenId(screenId);
+    }
 
 }
